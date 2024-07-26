@@ -4,14 +4,13 @@ import { ProductDetails } from '@/components/home';
 import { products } from '@/utils/products';
 
 
-import { product } from '@/utils/product';
 import { IParams } from '@/types'
 
 
 const Product = ({ params }: { params: IParams }) => {
     console.log('params', params);
 
-    /*const product=products.find((item)=>item.id === params.productId)*/
+    const product=products.find((item)=>item.id === params.productId)
 
     return (
         <div className='p-16'>
