@@ -1,7 +1,6 @@
 
 import { MouseEventHandler } from "react";
 import { CartProductType, selectedImgType } from "@/components/home/shop/productDetails";
-import {product} from "@/utils/product"
 
 
 export interface CustomButtonProps {

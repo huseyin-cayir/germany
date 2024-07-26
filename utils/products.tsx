@@ -2,7 +2,7 @@ export const products = [
   {
     id: "252d6532d46ac57g78uy32a",
     name: "ABS Sensor",
-    describtion: "Short description",
+    description: "Short description",
     price: "29.99",
     carBrand: "BMW",
     model: "330i",
@@ -37,7 +37,7 @@ export const products = [
   {
     id: "252d6532d46ac57g78uy32a1",
     name: "Spark Plug",
-    describtion: "Short description",
+    description: "Short description",
     price: "19.99",
     carBrand: "BMW",
     model: "228i",
@@ -63,7 +63,7 @@ export const products = [
   {
     id: "252d6532d46ac57g78uy32a3",
     name: "HVAC Blower",
-    describtion: "Short description",
+    description: "Short description",
     price: "59.99",
     carBrand: "Volkswagen",
     model: "passat",

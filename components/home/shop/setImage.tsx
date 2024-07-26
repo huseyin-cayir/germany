@@ -3,7 +3,6 @@
 import React from "react";
 import { CartProductType, selectedImgType } from "./productDetails";
 import { setImageProps } from "@/types";
-import { product } from "@/utils/product";
 
 const SetImg: React.FC<setImageProps> = ({
   images, cartProduct, handleImageSelect

@@ -1,16 +1,14 @@
 "use client";
 
-import { product } from "@/utils/product";
 import { ProductDetailsProps } from "@/types";
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { SetImg } from "@/components/home";
 import SetQuantity from "./SetQuantity";
 import AddToCart from "./AddToCart";
 import ProductImage from "./ProductImage";
 import { useCart } from "@/hooks/useCart";
-import { MdCheckCircle } from "react-icons/md";
+import { MdArrowBack, MdCheckCircle } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Horizontal = () => {
   return <hr className="w-[30%] my-2" />;
@@ -47,11 +45,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     price: product.price,
   });
 
-  const router=useRouter()
+  const router = useRouter();
 
   console.log(cartProducts);
-
-
 
   useEffect(() => {
     setIsProductInCart(false);
@@ -129,12 +125,24 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
               <span>Product added to cart</span>
             </p>
             <div className="max-w-[300px]">
-              <AddToCart label="View Cart" outline onClick={() => {router.push('/cart')} }/>
+              <AddToCart
+                label="View Cart"
+                outline
+                onClick={() => {
+                  router.push("/cart");
+                }}
+              />
+              <Link
+                href={"/shop"}
+                className="text-slate-500 flex items-center gap-1 mt-2"
+              >
+                <MdArrowBack />
+                <span>Continue Shopping</span>
+              </Link>
             </div>
           </>
         ) : (
           <>
-           
             <Horizontal />
             <SetQuantity
               cartProduct={cartProduct}
@@ -147,6 +155,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
                 label="Add to cart"
                 onClick={() => handleAddProductToCart(cartProduct)}
               />{" "}
+              <Link
+                href={"/shop"}
+                className="text-slate-500 flex items-center gap-1 mt-2"
+              >
+                <MdArrowBack />
+                <span>Continue Shopping</span>
+              </Link>
             </div>
           </>
         )}
