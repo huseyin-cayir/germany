@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CartCount from "./CartCount";
+import { MdAccountCircle, MdCall, MdSettings,  MdSupervisedUserCircle } from "react-icons/md";
 
 const Navbar = () => {
   return (
@@ -24,7 +25,7 @@ const Navbar = () => {
               <Link href="/favorites" className="flex px-1.5">
                 Favorites  
               </Link>
-              <Link href="/" className="flex px-1.5">
+              <Link href="/coding" className="flex px-1.5">
                 Coding
               </Link>
               <CartCount/>
@@ -36,14 +37,14 @@ const Navbar = () => {
         <div className="mx-full flex justify-between items-center">
           
           <div className="flex justify-between w-full px-5">
-              <Link href="/" className="flex px-1.5">
-                Favorites  
+              <Link href="#" className="flex px-1.5">
+                <MdCall size={24}/>  
               </Link>
-              <Link href="/" className="flex px-1.5">
-                Coding
+              <Link href="#" className="flex px-1.5">
+                <MdSettings size={24} />
               </Link>
-              <Link href="/" className="flex px-1.5">
-                Cart  
+              <Link href="#" className="flex px-1.5">
+                <MdAccountCircle size={24}/> 
               </Link>
           </div>
         
