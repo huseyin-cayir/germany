@@ -73,23 +73,21 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   );
 
   const handleQtyIncrease = useCallback(() => {
-    if (cartProduct.quantity == 99) {
-      return;
-    }
-
     setCartProduct((prev) => {
-      return { ...prev, quantity: ++prev.quantity };
+      if (prev.quantity + 1 === 99) {
+        return prev;
+      }
+      return { ...prev, quantity: prev.quantity + 1 };
     });
-  }, [cartProduct]);
+  }, []);
   const handleQtyDecrease = useCallback(() => {
-    if (cartProduct.quantity === 0) {
-      return;
-    }
-
     setCartProduct((prev) => {
-      return { ...prev, quantity: --prev.quantity };
+      if (prev.quantity - 1 === 0) {
+        return prev;
+      }
+      return { ...prev, quantity: prev.quantity - 1 };
     });
-  }, [cartProduct]);
+  }, []);
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
       <ProductImage

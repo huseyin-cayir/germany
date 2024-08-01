@@ -1,19 +1,19 @@
+"use client";
+
+
+import { brands } from '@/utils/brands'
 import Link from 'next/link'
 import React from 'react'
+import BrandCard from './BrandCard'
+import SelectedBrand from './SelectedBrand';
 
 const BrandLinks = () => {
   return (
-    <div className='w-full flex justify-between p-8 bg-[#1c1c1e] overflow-x-visible'>
+    <div className='w-full flex justify-between p-8 bg-[#1c1c1e] gap-4'>
               
-              <Link href='/coding/bmw' className='bg-zinc-800 p-3 rounded-lg'>
-                <span className='flex flex-col justify-center items-center text-white'><img src="/images/BMW.svg" alt="bmw" width={85}/>bmw</span>
-              </Link>
-              <Link href='#' className='bg-zinc-800 p-3 rounded-lg'>
-                <span className='flex flex-col justify-center items-center text-white'><img src="/images/VW.svg" alt="Volkswagen" width={85}/>Volkswagen</span>
-              </Link>
-              <Link href='#' className='bg-zinc-800 p-3 rounded-lg'>
-                <span className='flex flex-col justify-center items-center text-white'><img src="/images/Audi.svg" alt="Audi" width={85}/>Audi</span>
-              </Link>
+              {brands.map((brand: any) => {
+                return<BrandCard brand={brand}/>
+        })}
              
           </div>
   )
