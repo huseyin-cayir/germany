@@ -13,6 +13,7 @@ export interface CustomButtonProps {
 
 export interface IParams{
     productId?: string;
+    brandId?: string;
 };
 
 export interface ProductDetailsProps{

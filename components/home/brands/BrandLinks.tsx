@@ -1,18 +1,25 @@
 "use client";
 
-
-import { brands } from '@/utils/brands'
-import Link from 'next/link'
 import React from 'react'
 import BrandCard from './BrandCard'
-import SelectedBrand from './SelectedBrand';
 
-const BrandLinks = () => {
+interface Brand {
+  id: string;
+  name: string;
+  imageUrl: string;
+}
+
+interface BrandCardProps {
+  brands: Brand[];
+  selectedBrand: string;
+  onChange: (id: string) => void;
+}
+const BrandLinks:React.FC<BrandCardProps> = ({brands, selectedBrand, onChange}) => {
   return (
     <div className='w-full flex justify-between p-8 bg-[#1c1c1e] gap-4'>
               
-              {brands.map((brand: any) => {
-                return<BrandCard brand={brand}/>
+              {brands.map((brand) => {
+                return <BrandCard brand={brand} selectedBrand={selectedBrand} onChange={onChange} />
         })}
              
           </div>
